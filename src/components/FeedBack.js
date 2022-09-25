@@ -2,7 +2,7 @@ import React from "react";
 import { useResultContext } from "../context/ContextProvider";
 
 const FeedBack = () => {
-  const {feedBack, setFeedBack,feedBackController} = useResultContext();
+  const {feedBack, feedBackController} = useResultContext();
   return (
     <div
       id="shadow"
@@ -21,15 +21,14 @@ const FeedBack = () => {
     >
       <h3>FeedBack</h3>
       <button
+      className={!feedBack ? "FeedBackButtonOn" : "FeedBackButtonOff"}
       onClick={feedBackController}
         style={{
           height: "45%",
-          backgroundColor: "lightgreen",
           width: "80%",
           borderStyle: "none",
           borderRadius: "8px",
           cursor: "pointer",
-  
         }}
       >
         <h3>We're Listening</h3>

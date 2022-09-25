@@ -34,11 +34,17 @@ export const ContextProvider = ({ children }) => {
   const feedBackController = () =>{
     setFeedBack(!feedBack);
   }
-
+  const DataUpdateController = (id)=>{
+    const upDatedData = newsData.filter((value)=>{
+      return id !== value.id;
+    })
+    setNewsData(upDatedData);
+   
+  }
 
   return (
     <ResultContext.Provider
-      value={{ toggle, setToggle, newsData, setNewsData, setLoading, loading, currentPage, postPerPage, setCurrentPage, setPostPerPage, iFrame, setIFrame,iFrameController,feedBack, setFeedBack,feedBackController}}
+      value={{ toggle, setToggle, newsData, setNewsData, setLoading, loading, currentPage, postPerPage, setCurrentPage, setPostPerPage, iFrame, setIFrame,iFrameController,feedBack, setFeedBack,feedBackController,DataUpdateController}}
     >
       {children}
     </ResultContext.Provider>

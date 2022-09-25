@@ -2,10 +2,10 @@ import React from "react";
 import { useResultContext } from "../context/ContextProvider";
 
 const HorizontalCard = ({ data }) => {
-  const { iFrameController } = useResultContext();
+  const { iFrameController,DataUpdateController} = useResultContext();
 
   return(
-    <div onClick={iFrameController} className="HorizontalCard">
+    <div  className="HorizontalCard">
     <div
       id="shadow"
       style={{
@@ -15,11 +15,13 @@ const HorizontalCard = ({ data }) => {
       }}
     >
       <div
+      onClick={iFrameController}
         style={{
           display: "flex",
           height: "100%",
           justifyContent: "space-around",
           alignItems: "center",
+
         }}
       >
         <div
@@ -33,7 +35,7 @@ const HorizontalCard = ({ data }) => {
             alignItems: "center",
           }}
         >
-          <img src="https://img.icons8.com/color/48/000000/image.png" />
+          <img src="https://img.icons8.com/color/48/000000/image.png" alt="img"/>
         </div>
 
         <div
@@ -56,6 +58,7 @@ const HorizontalCard = ({ data }) => {
     </div>
 
     <div
+    onClick={ ()=>{DataUpdateController(data.id)}}
       style={{
         height: "100%",
         width: "10%",

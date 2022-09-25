@@ -2,9 +2,11 @@ import React from "react";
 import { useResultContext } from "../context/ContextProvider";
 
 const VerticalCard = ({ data }) => {
-  const { iFrameController } = useResultContext();
+  const { iFrameController,DataUpdateController} = useResultContext();
+
+
   return (
-    <div onClick={iFrameController} id="shadow" className="VerticalCard">
+    <div  id="shadow" className="VerticalCard">
       <div
         style={{
           display: "flex",
@@ -14,7 +16,7 @@ const VerticalCard = ({ data }) => {
         }}
       >
         <span
-          // onClick={delteItems(key)}
+          onClick={ ()=>{DataUpdateController(data.id)}}
           style={{ cursor: "pointer", color: "red" }}
           className="material-symbols-outlined"
         >
@@ -23,6 +25,7 @@ const VerticalCard = ({ data }) => {
       </div>
 
       <div
+      onClick={iFrameController}
         style={{
           display: "flex",
           flexDirection: "column",

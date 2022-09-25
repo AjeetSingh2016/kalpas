@@ -82,6 +82,7 @@
     border-radius: 10px;
     display: flex;
     flex-direction: row;
+    cursor: pointer;
 }
 
 
@@ -93,10 +94,11 @@
     display: flex; 
     justify-content: center;
     align-items: center;
+    backdrop-filter: blur(3px);
     
 }
 .FeeBackFormContainer{
-    width: 100%;
+    width: 75%;
     height: 100vh;
     backdrop-filter: blur(3px);
 }
@@ -126,3 +128,14 @@
    font-size: calc(10px + 2vmin);
    color: black;
  }
+
+ /* FeedBack button  */
+
+ .FeedBackButtonOff{
+     background-color: rgb(253, 143, 143);
+
+ }
+ .FeedBackButtonOn{
+    background-color: lightgreen;
+
+}

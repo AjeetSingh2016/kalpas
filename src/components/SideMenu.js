@@ -24,7 +24,7 @@ const SideMenu = () => {
       >
         <Profile />
         {!feedBack ? <ToggleButton />: ""}
-        
+      
         <FeedBack />
       </div>
     </div>
