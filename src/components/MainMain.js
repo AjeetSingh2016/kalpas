@@ -1,5 +1,5 @@
 import React, { useEffect} from "react";
-import News from "./News";
+import Movies from "./Movies";
 import Paginations from "./Paginations";
 import { useResultContext } from "../context/ContextProvider";
 
@@ -15,15 +15,17 @@ const MainMain = () => {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      const data = await fetch("https://jsonplaceholder.typicode.com/posts");
+      const data = await fetch("https://api.tvmaze.com/search/shows?q=all");
       const res = await data.json();
       setNewsData(res);
       setLoading(false);
+      console.log(res);
 
     };
     fetchData();
-  }, []);
+  }, [setNewsData, setLoading]);
 
+  
   // Get current post
 
   const indexOfLastPost = currentPage * postPerPage;
@@ -44,7 +46,7 @@ const MainMain = () => {
         height: "100%",
       }}
     >
-      <News data={currentPost}/>
+      <Movies data={currentPost}/>
       <Paginations postPerPage={postPerPage} totalPost={newsData.length}/>
     </div>
   );

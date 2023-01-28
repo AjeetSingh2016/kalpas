@@ -6,7 +6,7 @@ const ToggleButton = () => {
   const { toggle, setToggle,setPostPerPage,postPerPage } = useResultContext();
   const toggleFunction = () =>{
     setToggle(!toggle)
-    {toggle ? setPostPerPage(postPerPage-1) : setPostPerPage(postPerPage+1)}
+    toggle ? setPostPerPage(postPerPage-1) : setPostPerPage(postPerPage+1)
 
   }
   

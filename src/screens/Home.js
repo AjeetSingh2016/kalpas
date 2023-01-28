@@ -1,12 +1,11 @@
 import React from 'react'
 import { MainMenu, SideMenu } from '../components'
 import { useResultContext } from '../context/ContextProvider'
-import IFrame from './IFrame'
 import FeedBackForm from './FeedBackForm'
 
 const Home = () => {
 
-  const {iFrame,feedBack} = useResultContext();
+  const {feedBack} = useResultContext();
 
   return (
     <div>
@@ -24,7 +23,6 @@ const Home = () => {
           
           <MainMenu />
       </div>
-      {iFrame ? <IFrame />: ""}
     </div>
   )
 }

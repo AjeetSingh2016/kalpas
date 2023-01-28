@@ -1,60 +1,59 @@
 import React from "react";
-import { useResultContext } from "../context/ContextProvider";
+import { useNavigate } from "react-router-dom";
 
 const VerticalCard = ({ data }) => {
-  const { iFrameController,DataUpdateController} = useResultContext();
+
+  const navigate = useNavigate();
 
 
   return (
-    <div  id="shadow" className="VerticalCard">
+    <div onClick={()=>{
+      navigate("/booking", {state: data})
+    }} id="shadow" className="VerticalCard">
       <div
         style={{
-          display: "flex",
-          width: "100%",
-          justifyContent: "flex-end",
-          height: "10%",
+          height: "90%",
         }}
       >
-        <span
-          onClick={ ()=>{DataUpdateController(data.id)}}
-          style={{ cursor: "pointer", color: "red" }}
-          className="material-symbols-outlined"
-        >
-          close
-        </span>
+        <img
+          className="image-card"
+          src={
+            data.show.image
+              ? data.show.image.medium
+              : "https://img.icons8.com/color/48/000000/image.png"
+          }
+          alt="img"
+        />
       </div>
-
       <div
-      onClick={iFrameController}
         style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-around",
           backgroundColor: "white",
-          height: "40%",
-        }}
-      >
-        <h3 style={{ textTransform: "capitalize" }}>
-          {data.title.length > 20
-            ? `${data.title.slice(0, 20)}...`
-            : data.title}
-        </h3>
-        <p>{`${data.body.slice(0, 45)}...`}</p>
-        <p style={{ color: "gray", fontSize: "17px" }}>
-          Mon, 21 Dec 2020 14:57 GMT
-        </p>
-      </div>
-
-      <div
-        style={{
-          height: "50%",
-          backgroundColor: "lightgray",
+          height: "10%",
           display: "flex",
-          justifyContent: "center",
+          justifyContent: "space-around",
           alignItems: "center",
         }}
       >
-        <img src="https://img.icons8.com/color/48/000000/image.png" alt="img" />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <span
+            className="material-symbols-outlined"
+            style={{ paddingRight: "15px" }}
+          >
+            star
+          </span>
+          <h4>{`Rating ${
+            data.show.rating.average ? data.show.rating.average : "Null"
+          }`}</h4>
+        </div>
+        <p style={{ color: "gray", fontSize: "17px" }}>
+          {`${data.show.premiered ? data.show.premiered : "No data"}`}
+        </p>
       </div>
     </div>
   );

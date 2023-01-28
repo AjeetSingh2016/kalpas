@@ -20,11 +20,11 @@ const Paginations = ({ postPerPage, totalPost }) => {
         width: "50%",
         height: "5%",
         display: "flex",
-        justifyContent: "space-around",
+        justifyContent: "center",
       }}
     >
       {pageNumbers.map((number) => (
-        <a
+        <button
           key={number}
           onClick={()=>paginate(number)}
           style={{
@@ -32,12 +32,12 @@ const Paginations = ({ postPerPage, totalPost }) => {
             width: "25px",
             height: "25px",
             borderRadius: "50%",
+            marginLeft: "10px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
           }}
-          href="!#"
-        >{`${number} `}</a>
+        >{`${number}`}</button>
       ))}
     </div>
   );

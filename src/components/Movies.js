@@ -6,8 +6,7 @@ import HorizontalCard from "./HorizontalCard";
 
 
 
-const News = ({ data }) => {
-
+const Movies = ({ data }) => {
 
   const { toggle ,loading } =
     useResultContext();
@@ -33,5 +32,5 @@ const News = ({ data }) => {
   );
 };
 
-export default News;
+export default Movies;
 

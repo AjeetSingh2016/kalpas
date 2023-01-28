@@ -22,8 +22,8 @@ const Profile = () => {
         <div id="center" style={{
             flexDirection: "column",
         }}>
-            <h3>Hi Readers,</h3>
-            <h4>Here's your News!</h4>
+            <h3>Hi Viewers,</h3>
+            <h4>Here's your Movies!</h4>
         </div>
         
       </div>

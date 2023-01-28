@@ -13,7 +13,6 @@ export const ContextProvider = ({ children }) => {
 
   const [iFrame, setIFrame] = useState(false)
 
-
   // State for Loading
   const [loading, setLoading] = useState(false);
 
@@ -23,6 +22,8 @@ export const ContextProvider = ({ children }) => {
   // State for Post per Page
   const [postPerPage, setPostPerPage] = useState(6);
 
+  const [detail, setDetail] = useState({})
+  
 
   // FeedBack Indicator
 
@@ -42,9 +43,13 @@ export const ContextProvider = ({ children }) => {
    
   }
 
+  const setDetails = (data) =>{
+    setDetail(data)
+  }
+
   return (
     <ResultContext.Provider
-      value={{ toggle, setToggle, newsData, setNewsData, setLoading, loading, currentPage, postPerPage, setCurrentPage, setPostPerPage, iFrame, setIFrame,iFrameController,feedBack, setFeedBack,feedBackController,DataUpdateController}}
+      value={{ toggle, setToggle, newsData, setNewsData, setLoading, loading, currentPage, postPerPage, setCurrentPage, setPostPerPage, iFrame, setIFrame,iFrameController,feedBack, setFeedBack,feedBackController,DataUpdateController, setDetails, detail}}
     >
       {children}
     </ResultContext.Provider>
